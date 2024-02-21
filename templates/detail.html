@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Details {% endblock %}
+
+{% block content %}
+    <p class="mt-4 ml-4">Name : {{ person.name }}</p>
+    <p class="mt-4 ml-4">Age : {{ person.age }}</p>
+    <p class="mt-4 ml-4">Bio : {{ person.bio }}</p>
+    <p class="mt-4 ml-4">Create at : {{ person.created }}</p>
+    <p class="mt-4 ml-4">Gender : {{ person.gender }}</p>
+    <div class="flex">
+
+
+    <form action="{% url 'home:update' pk=person.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 mt-4 ml-4">Update</button>
+    </form>
+    <a href="{% url 'home:delete' pk=person.pk %}" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 mt-4 ml-4">Delete</a>
+
+</div>
+
+
+
+{% endblock %}

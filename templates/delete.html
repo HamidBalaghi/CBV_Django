@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Delete{% endblock %}
+{% block content %}
+    <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+        <p class="text-lg">Are you sure you want to delete {{ object.name }}?</p>
+        <form action="" method="post" class="mt-4">
+            {% csrf_token %}
+            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700">Delete</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+    <div>
+        {% if messages %}
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+<div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Login</h2>
+    <form method="post" action="" class="space-y-4">
+        {% csrf_token %}
+        <div>
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div>
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Login</button>
+    </form>
+</div>
+{% endblock %}

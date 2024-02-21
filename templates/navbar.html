@@ -1,0 +1,21 @@
+
+
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+
+        <div>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="text-white">Home</a></li>
+                <li><a href="#" class="text-white">About</a></li>
+                <li><a href="{% url 'home:create' %}" class="text-white">Create</a></li>
+                <li><a href="{% url 'home:login' %}" class="text-white">Login</a></li>
+                <li><a href="{% url 'home:logout' %}" class="text-white">Logout</a></li>
+
+
+            </ul>
+        </div>
+        <div>
+            <a href="#" class="text-white text-xl font-bold">Hamid Site</a>
+        </div>
+    </div>
+</nav>
